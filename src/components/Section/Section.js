@@ -1,4 +1,6 @@
+import { PropTypes } from 'prop-types';
 import { Component } from 'react';
+import s from './Sectiom.module.scss';
 
 export class Section extends Component {
   state = {
@@ -7,10 +9,14 @@ export class Section extends Component {
 
   render() {
     return (
-      <section>
-        <h2>{this.state.title}</h2>
+      <section className={s.section}>
+        <h2 className={s.title}>{this.state.title}</h2>
         {this.props.children}
       </section>
     );
   }
 }
+
+Section.protoTypes = {
+  title: PropTypes.sting,
+};

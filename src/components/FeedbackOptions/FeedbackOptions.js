@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { PropTypes } from 'prop-types';
+import s from './FeedbackOptions.module.scss';
 
 export class FeedbackOptions extends Component {
   capitalize = string => {
@@ -8,10 +10,10 @@ export class FeedbackOptions extends Component {
   render() {
     const options = Object.keys(this.props.options);
     return (
-      <ul>
+      <ul className={s.list}>
         {options.map(option => {
           return (
-            <li key={option}>
+            <li key={option} className={s.element}>
               <button
                 type="button"
                 onClick={this.props.onLeaveFeedback}
@@ -26,3 +28,8 @@ export class FeedbackOptions extends Component {
     );
   }
 }
+
+FeedbackOptions.protoTypes = {
+  options: PropTypes.sting,
+  onLeaveFeedback: PropTypes.func,
+};

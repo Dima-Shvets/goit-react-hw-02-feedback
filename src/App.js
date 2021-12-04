@@ -3,6 +3,7 @@ import { Statistics } from './components/Statistics';
 import { FeedbackOptions } from './components/FeedbackOptions';
 import { Notification } from './components/Notification';
 import { Component } from 'react';
+import './App.scss';
 
 class App extends Component {
   state = {
