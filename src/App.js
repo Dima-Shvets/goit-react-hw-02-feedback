@@ -12,9 +12,7 @@ class App extends Component {
     bad: 0,
   };
 
-  buttonHandler = e => {
-    const { value } = e.currentTarget.dataset;
-
+  buttonHandler = value => {
     this.setState(prevState => ({ [value]: prevState[value] + 1 }));
   };
 
@@ -29,13 +27,13 @@ class App extends Component {
     const total = this.countTotalFeedback();
     return (
       <>
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
             onLeaveFeedback={this.buttonHandler}
           />
         </Section>
-        <Section title={'Statistics'}>
+        <Section title="Statistics">
           {total === 0 ? (
             <Notification message="There is no feedback" />
           ) : (

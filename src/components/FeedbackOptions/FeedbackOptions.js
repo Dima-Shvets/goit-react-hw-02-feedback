@@ -16,8 +16,7 @@ export class FeedbackOptions extends Component {
             <li key={option} className={s.element}>
               <button
                 type="button"
-                onClick={this.props.onLeaveFeedback}
-                data-value={option}
+                onClick={() => this.props.onLeaveFeedback(option)}
               >
                 {this.capitalize(option)}
               </button>
